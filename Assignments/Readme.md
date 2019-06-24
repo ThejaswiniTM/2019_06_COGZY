@@ -1,8 +1,58 @@
 ### Assignment 1
 
 1. Write a brief history of Java Programming Language
+   a. Java is a pure object oriented programming language
+   b. Java is a platform independent programming language
+   c. Easy to understand
+   d. James Gosling is the father of Java programming
+   e. Java was started as a project by OAK by James Gosling in 1991.
+   f. The Java program can be wriiten once, run anywhere
+   g. Java programming were simple,reboust,portable,object-oriented,secured
+   h. Java is a high level lamguage and high performance programming language.
+   i. Java is implemented in number of places like web application,mobile application etc
+   j. Java applications are compiled to byte code and can be run on any Java Virtual Machine(JVM).
+   
+
+
 2. Explain Primitive types in Java
+   There are 8 primitive data types in Java
+   
+   1. byte - range 1 byte
+   2. short - range 2 byte
+   3. int - range 4 byte
+   4. long range 8 byte
+   These are integer data types.
+   
+   5. float - range 4 byte
+   6. double - range 8 byte
+   These are real data types
+   
+   7. char - range 2 byte
+   These are character data type
+   
+   8. boolean - 1 bit (true or false)
+   These are logical data type
+   
+   
+
+
 3. What are the different programming constructs in java? Explain with examples.
+
+   There are three programming constructs in java
+     1. Sequence
+     2. Selection
+     3. Repeatation
+     
+    1. Sequence constructs tells to the processor which statement should be executed next 
+       Ex: goto statement, break statement
+       
+    2. Selection constructs provides the condition
+       Ex: if statement, case statement
+       
+    3. Iteration constructs invoke group or one or moore statements to be executed repeateadly
+       Ex: for loop, while loop 
+
+
 
 ---
 
@@ -40,6 +90,31 @@ Implement the body for the following function:
 ````java
 static boolean isPrimeNumber(int num) { 
 	// do stuff here
+boolean isPrimeNumber=true;
+for(int i=1;i<=num;i++)
+  {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter a number");
+    num=sc.nextInt();
+    
+    isPrimeNumber=true;
+    
+    if(num==1)
+    isPrimeNumber=false;
+    
+    for(int i=2;i<num;i++)
+    {
+     if(num%i==0)
+      {
+      isPrimeNumber=false;
+      }
+    }
+    
+    if(isPrimeNumber)
+    Syustem.out.println(num);
+	retuen true;
+   }
+ 	
 	return false; 
 }
 ````
@@ -58,6 +133,56 @@ Write a function called "sortThreeNumbers", which takes 3 distinct integers and 
 ````java
 public void sortThreeNumbers(int a, int b, int c) { 
 	// do stuff here
+	Scanner sc=new Scanner(System.in);
+	
+	System.out.println("enter the three integers");
+	a=sc.nextInt();
+	b=sc.nextInt();
+	c=sc.nextInt();
+	
+    if(a>b && a>c)
+    {
+      if(b>c)
+      {
+        System.out.println(c+b+a);
+      }
+      
+      else
+      {
+      System.out.println(b+c+a);
+      }
+     
+    }
+    
+    
+  else  if(b>a && b>c)
+      {
+        if(a>c)
+	{
+	 System.out.println(c+a+b);
+	 }
+	else
+	{
+	System.out.println(a+c+b);
+	}
+    }
+     
+  else if(c>a && 3>2)
+    {
+      if(a>b)
+      {
+      System.out.println(b+a+c);
+      }
+     else
+      {
+      System.out.println(a+b+c);
+      }
+    }
+    
+    else 
+    {
+    System.out.println("invalid nor");
+    }	
 }
 
 ````
@@ -79,6 +204,7 @@ Write a function called "sumOfPrimes", that takes two integers as input and retu
 ````java
 public int sumOfPrimes(int from, int to) { 
 	// do stuff here
+	
 	return 0; 
 }
 ````
@@ -99,6 +225,20 @@ Write a function called "fibonacci", that takes index as paramter and returns th
 ````java
 public int fibonacci(int index) { 
 	// do stuff here
+	int a=0,b=0,c=1;
+	
+	Scanner sc=new Scanner(System.in);
+	
+	System.out.println("enter the index ");
+	index=sc.nextInt();
+	
+	
+	for(int i=0;i<index;i++)
+	{
+	 a=b;
+	 b=c;
+	 c=a+b;
+	 }
 	return 0; 
 }
 ````
@@ -120,6 +260,21 @@ Write a Java program to print the following pattern:
 The number of rows should be based on the value of a variable "num", and the number of stars in a row is based on the row number itself.
 
 
+public class star
+{
+public static void main(String[] args)
+{
+   for(int i=1;i<=5;i++)
+   {
+     for(int j=0;j<i;j++)
+     {
+       System.out.print("*");
+      }
+     System.out.println();
+    }
+ }
+ }
+ 
 ---
 
 ### Assignment 8
@@ -173,7 +328,35 @@ Write a function called "sumOfEvensAndOdds", that takes an array of integers as 
 
 ````java
 public int[] sumOfEvensAndOdds(int []nums) { 
-	// do stuff here
+	int n,sume=0,sumo=0;
+	Scanner sc=new Scanner(System.in);
+	
+	n=sc.nextInt();
+	System.out.println("enter the numbers");
+	
+	int [] nums=new int[n];
+	
+	System.out.println("enter the array elements");
+	for(int i=0;i<n;i++)
+	{
+	 a[i]=sc.nextInt();
+	}
+	
+	for(int i=0;i<n;i++)
+	{
+	if(a[i]%2==0)
+	{
+	  sume=sume+a[i];
+	 }
+	  
+	else
+	{
+	sumo=sumo+a[i];
+	}
+  }
+  System.out.println("sum of even numbers"+sume);
+  System.out.println("sum of odd numbers"+sumo);
+	
 	return null;
 }
 ````
